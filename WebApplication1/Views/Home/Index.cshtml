@@ -11,9 +11,18 @@
         var foot = "2022.06.28";
     }
     <h3>This time I'm gonna use Razor. Like this, 
-        The first variable head is : @head
-        The second variable foot is : @foot
+        <br>The first variable head is : @head
+        <br>The second variable foot is : @foot
     </h3>
+
 
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@*그러고 보니 <!HTML> 이 없어 <HEAD></HEAD><BODY></BODY> 도 없고 허허..*@
+@for(int i = 0 ; i < 2; i++){
+    for(int j = 0; j < 100; j++){
+        <span>*</span>
+    }
+    <br>
+}@*막 쓰니까 편하긴 한데 성능은 괜찮겠지?*@
