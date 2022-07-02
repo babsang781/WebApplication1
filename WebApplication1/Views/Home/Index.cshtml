@@ -6,7 +6,7 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-        <p>This time is @DateTime.Now </p>
+    <p>The time is @DateTime.Now </p>
     <h2>welcome2</h2>
     @{
         var head = "2022.06.27";
@@ -16,6 +16,37 @@
         <br>The first variable head is : @head
         <br>The second variable foot is : @foot
     </h3>
+    <br>
+    <h3>And the Today's weekDay ( what you have came here now ) is : <br />@DateTime.Now.DayOfWeek</h3>
+     @* This can be save as a 'var' *@
+
+     <p>So,</p>
+    @{
+        var txt = "";
+        if (DateTime.Now.Hour > 12)
+        {txt = "Good Evening";}
+        else
+        { txt = "Good Morning";}
+    }
+    <h2>@txt</h2>
+
+   @* @{
+        var totalMessage = "";
+        if(IsPost){
+            var num1 = Request["text1"];
+            var num2 = Request["text2"];
+            var total = num1.AsInt() + num2.AsInt();
+            totalMessage = "Total = " + total;
+        }
+    }
+    <form action="" method="post">
+        <p><label for="text1">First Number:</label>
+            <input type="text" name="text1" /></p>
+        <p><label for="text2">Second Number:</label>
+            <input type="text" name="text2" /></p>
+        <p><input type="submit" value=" Add " /></p>
+    </form>
+    <p>@totalMessage</p>*@
 
 
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
