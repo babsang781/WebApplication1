@@ -4,3 +4,88 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+
+@*.cshtml파일 은 Razor 구문을 사용하는 C# 코드가 있는 HTML 태그를 포함*@
+
+@* Request 명령어는 import를 해야하는지 에러가 나서 관련 파트 주석 처리
+    {
+    ViewData["Title"] = "Home Page";
+    var imagePath="";
+    if( Request["Choice"] != null)
+   {imagePath="images/" + Request["Choice"];}
+}
+@if(imagePath != "")
+{
+<p>
+<img src="@imagePath" alt="Sample">
+</p>
+} *@
+ <h1 class="display-4">Welcome</h1>
+    <p>The time is @DateTime.Now </p>
+    <h2>welcome2</h2>
+    @{
+        var head = "2022.06.27";
+        var foot = "2022.06.28";
+    }
+    <h3>This time I'm gonna use Razor. Like this, 
+        <br>The first variable head is : @head
+        <br>The second variable foot is : @foot
+    </h3>
+    <br>
+    <h3>And the Today's weekDay ( what you have came here now ) is : <br />@DateTime.Now.DayOfWeek</h3>
+     @* This can be save as a 'var' *@
+
+     <p>So,</p>
+    @{
+        var txt = "";
+        if (DateTime.Now.Hour > 12)
+        {txt = "Good Evening";}
+        else
+        { txt = "Good Morning";}
+    }
+    <h2>@txt</h2>
+
+
+    <form method="post" action="">
+I want to see:
+<select name="Choice">
+   <option value="Pic1.jpg">Photo 1</option>
+   <option value="Pic2.jpg">Photo 2</option>
+   <option value="Pic3.jpg">Photo 3</option>
+</select>
+<input type="submit" value="Submit">
+
+<% 
+Response.Write("Hello World!");
+%>
+</form>
+
+   @* @{
+        var totalMessage = "";
+        if(IsPost){
+            var num1 = Request["text1"];
+            var num2 = Request["text2"];
+            var total = num1.AsInt() + num2.AsInt();
+            totalMessage = "Total = " + total;
+        }
+    }
+
+
+    <form action="" method="post">
+        <p><label for="text1">First Number:</label>
+            <input type="text" name="text1" /></p>
+        <p><label for="text2">Second Number:</label>
+            <input type="text" name="text2" /></p>
+        <p><input type="submit" value=" Add " /></p>
+    </form>
+    <p>@totalMessage</p>*@
+
+
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @*그러고 보니 <!HTML> 이 없어 <HEAD></HEAD><BODY></BODY> 도 없고 허허..*@
+@for(int i = 0 ; i < 2; i++){
+    for(int j = 0; j < 100; j++){
+        <span>*</span>
+    }
+    <br>
+}@*막 쓰니까 편하긴 한데 성능은 괜찮겠지?*@

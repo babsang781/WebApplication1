@@ -1,61 +1,21 @@
-﻿@*.cshtml파일 은 Razor 구문을 사용하는 C# 코드가 있는 HTML 태그를 포함*@
+﻿<div class="text-center">
+   <h1>당신의 책갈피 웹페이지 만들기</h1>
+   <p>react 쓰면 이거 다 지워야 하려나? 어쨌든,</p>
 
-@{
-    ViewData["Title"] = "Home Page";
-}
+   <h2>로그인</h2>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>The time is @DateTime.Now </p>
-    <h2>welcome2</h2>
-    @{
-        var head = "2022.06.27";
-        var foot = "2022.06.28";
-    }
-    <h3>This time I'm gonna use Razor. Like this, 
-        <br>The first variable head is : @head
-        <br>The second variable foot is : @foot
-    </h3>
-    <br>
-    <h3>And the Today's weekDay ( what you have came here now ) is : <br />@DateTime.Now.DayOfWeek</h3>
-     @* This can be save as a 'var' *@
+   <form action="/" method="post">
+       <table >
+           <tr>
+               <td>ID</td><td><input type="text"/></td>
+           </tr>
+           <tr>
+               <td>PW</td><td><input type="text"/></td>
+           </tr>
+       </table>
+       <input type="submit" value="LOG IN"/>
 
-     <p>So,</p>
-    @{
-        var txt = "";
-        if (DateTime.Now.Hour > 12)
-        {txt = "Good Evening";}
-        else
-        { txt = "Good Morning";}
-    }
-    <h2>@txt</h2>
+   </form>
 
-   @* @{
-        var totalMessage = "";
-        if(IsPost){
-            var num1 = Request["text1"];
-            var num2 = Request["text2"];
-            var total = num1.AsInt() + num2.AsInt();
-            totalMessage = "Total = " + total;
-        }
-    }
-    <form action="" method="post">
-        <p><label for="text1">First Number:</label>
-            <input type="text" name="text1" /></p>
-        <p><label for="text2">Second Number:</label>
-            <input type="text" name="text2" /></p>
-        <p><input type="submit" value=" Add " /></p>
-    </form>
-    <p>@totalMessage</p>*@
-
-
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-@*그러고 보니 <!HTML> 이 없어 <HEAD></HEAD><BODY></BODY> 도 없고 허허..*@
-@for(int i = 0 ; i < 2; i++){
-    for(int j = 0; j < 100; j++){
-        <span>*</span>
-    }
-    <br>
-}@*막 쓰니까 편하긴 한데 성능은 괜찮겠지?*@
